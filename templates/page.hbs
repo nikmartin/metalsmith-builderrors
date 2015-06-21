@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{> meta }}
+
+  <body>
+
+    {{> gtm }}
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <div id="sb-site">
+      <div class="boxed">
+
+        {{> header }}
+
+        <section class="section-lines nitropcr-description">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                <h1>{{title}}</h1>
+                {{{ contents }}}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{> footer }}
+
+      </div>
+      <!-- boxed -->
+    </div>
+    <!-- sb-site -->
+
+    {{> slidebar }}
+
+    {{> scripts }}
+
+  </body>
+
+</html>

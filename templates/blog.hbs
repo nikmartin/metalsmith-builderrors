@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{> meta }}
+
+  <body>
+
+    {{> gtm }}
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <div id="sb-site">
+      <div class="boxed">
+
+        {{> header }}
+
+        <section class="section-lines nitropcr-description">
+          <div class="container">
+            <h1 class="page-title">NitroPCR Blog</h1>
+            <div class="row">
+              <div class="col-sm-12">
+                {{#each collections.blog }}
+                <article class="post animated fadeInLeft animation-delay-8">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <h3 class="post-title">
+                              <a href="blog/{{#title2link this.title }}{{/title2link}}" class="transicion">{{ this.title }}</a>
+                            </h3>
+                            <div class="row">
+                                <div class="col-lg-12 post-content">
+                                {{{ this.contents }}}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel-footer post-info-b">
+                            <div class="row">
+                                <div class="col-lg-10 col-md-9 col-sm-8">
+                                    <i class="fa fa-clock-o"></i>{{longDate this.date}}
+                                    <i class="fa fa-user"> </i <a href="#">{{this.author}}</a>
+
+                                </div>
+                                <div class="col-lg-2 col-md-3 col-sm-4">
+                                    <a href="blog/{{#title2link this.title }}{{/title2link}}" class="pull-right">Read more &raquo;</a>
+                                  
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article> <!-- post -->
+                {{/each}}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{> footer }}
+
+      </div>
+      <!-- boxed -->
+    </div>
+    <!-- sb-site -->
+
+    {{> slidebar }}
+
+    {{> scripts }}
+
+  </body>
+
+</html>

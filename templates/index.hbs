@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  {{> meta }}
+
+  <body>
+
+    {{> gtm }}
+
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="status">&nbsp;</div>
+    </div>
+
+    <div id="sb-site">
+      <div class="full-width">
+
+        {{> header }}
+
+        <div class="container margin-top">
+          <section>
+            <p class="slogan text-center">Create, edit, and submit EMS Patient Care Reports (PCRs) fast and painlessly</p>
+          </section>
+        </div>
+
+        {{!--
+        <section class="carousel-section">
+        </section> --}}
+        <!-- carousel -->
+
+        <section class="margin-bottom">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-6">
+                <div class="content-box box-default animated fadeInUp animation-delay-10">
+                  <h4 class="content-box-title">NEMSIS Compliant</h4>
+                  <p>NitroPCR is mobile software for completing, managing, and reporting Emergency Medical Services (EMS)
+                    Patient Care Reports. NitroPCR version 0.2.00 is certified NEMSIS Gold. <a href="nemsis.html">Read More</a></p>
+                </div>
+              </div>
+              <div class="col-sm-6">
+                <div class="content-box box-default animated fadeInUp animation-delay-14">
+                  <h4 class="content-box-title">FAST</h4>
+                  <p>NitroPCR is fast. A native application on your mobile device, connected to our secure PCR Cloud.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-lines nitropcr-description">
+          <div class="container">
+            <div class="row">
+              <div class="col-sm-12">
+                {{{ contents }}}
+                <!-- <h3>The template for all devices</h3> -->
+                <i class="fa fa-check-square-o"></i>
+                <strong>Portable</strong> – No expensive, heavy computer to carry around. Just take out your phone or tablet and complete your PCR anywhere, anytime. Runs on low cost tablets and phones.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Easy to Use</strong> – Quickly swipe between screens and sections with one hand.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Secure</strong> – Cloud connected, encrypted, and HIPAA compliant – NO PHI data stored on your mobile device.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Efficient</strong> – The efficiency gained in switching from paper to NitroPCR pays for itself the first month you use it.
+                <br> Capture signatures and images of documents and insurance cards right in the app, attached to the PCR. Integrated Patient Management stores frequent patient’s demographic information.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Speech enabled</strong> – Edit, update and transcribe your PCR just by talking to your phone, tablet, or Google Glass.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>GPS enabled</strong> – Route to and from any address using your device’s GPS.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>All devices</strong> – NitroPCR is compatible with all of your Android devices and is designed for phones and any size tablet.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>FAST</strong> – Real-Time reporting and dispatch updates.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Save Money</strong> – Stop paying for triple data entry (Dispatcher, User, and Billing), and pay for only the PCRs you create each month – no big up-front costs, training, hardware, or support fees.
+                <br>
+                <i class="fa fa-check-square-o"></i>
+                <strong>Make
+                  <em>More</em> Money</strong> – More accurate reporting means fewer claim denials and more efficient and thorough billing.
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {{> footer }}
+
+      </div>
+      <!-- boxed -->
+    </div>
+    <!-- sb-site -->
+
+    {{> slidebar }} {{> scripts }}
+
+  </body>
+
+</html>

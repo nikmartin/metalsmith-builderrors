@@ -1,0 +1,142 @@
+{{#if testimonials }}
+  <div class="container">
+    <section>
+      <h2 class="section-title">Our Clients</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="bxslider-controls">
+            <span id="bx-prev5"></span>
+            <span id="bx-next5"></span>
+          </div>
+          <ul class="bxslider" id="home-block">
+            <li>
+              <blockquote class="blockquote-color">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
+                <footer>Brian Krzanich, Intel CEO</footer>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="blockquote-color">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
+                <footer>Brian Krzanich, Intel CEO</footer>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="blockquote-color">
+                <p>Dolore totam at ea reiciendis suscipit a tempore cum nisi aspernatur nisi alias posuere erat a ante posuere erat a ante ultricies ultricies nisi vel augue quam semper conse erat quuntur.</p>
+                <footer>Sheldon Cooper, Physical Quantum</footer>
+              </blockquote>
+            </li>
+            <li>
+              <blockquote class="blockquote-color">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante ultricies nisi vel augue quam semper libero.</p>
+                <footer>Brian Krzanich, Intel CEO</footer>
+              </blockquote>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/intel.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/microsoft.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/nokia.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/samsung.png" alt="" class="img-responsive">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/anz.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/maxis.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/sony.png" alt="" class="img-responsive">
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-6">
+              <img src="/images/demo/hp.png" alt="" class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+{{/if}}
+
+<aside id="footer-widgets">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4">
+        <h3 class="footer-widget-title">Sitemap</h3>
+        <ul class="list-unstyled three_cols">
+          <li><a href="index.html" class="active">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="portfolio_sidebar.html">Portafolio</a></li>
+          <li><a href="portfolio_topvar.html">Works</a></li>
+          <li><a href="page_timeline_left.html">Timeline</a></li>
+          <li><a href="page_pricing.html">Pricing</a></li>
+          <li><a href="page_about2.html">About Us</a></li>
+          <li><a href="page_team.html">Our Team</a></li>
+          <li><a href="page_services.html">Services</a></li>
+          <li><a href="page_support.html">FAQ</a></li>
+          <li><a href="page_login_full.html">Login</a></li>
+          <li><a href="page_contact.html">Contact</a></li>
+        </ul>
+        <!--                 <h3 class="footer-widget-title">Subscribe</h3>
+                <p>Lorem ipsum Amet fugiat elit nisi anim mollit minim labore ut esse Duis ullamco ad dolor veniam velit.</p>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Email Adress">
+                    <span class="input-group-btn">
+                        <button class="btn btn-ar btn-primary" type="button">Subscribe</button>
+                    </span>
+                </div> -->
+        <!-- /input-group -->
+      </div>
+      <div class="col-md-4">
+        <div class="footer-widget">
+          <h3 class="footer-widget-title">Recent Bloggings</h3>
+          {{#first collections.blog 3}}
+            <div class="media">
+              <div class="media-body">
+                <h4 class="media-heading">
+                  <a href="/blog/{{#title2link this.title }}{{/title2link}}">{{ this.title }}</a>
+                </h4>
+                {{{ this.contents }}}
+              </div>
+            </div>
+          {{/first}}
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="footer-widget">
+          <h3 class="footer-widget-title">Contact</h3>
+          <address>
+            <strong>Open Frame LLC.</strong>
+            <br> 312-T Schillinger Rd. S. #156
+            <br> Mobile, Alabama 36608
+            <br>
+            <abbr title="Phone">P:</abbr>
+            <span>+1.251.581.9111</span>
+          </address>
+        </div>
+      </div>
+    </div>
+    <!-- row -->
+  </div>
+  <!-- container -->
+</aside>
+<!-- footer-widgets -->
+
+<footer id="footer">
+  <p>&copy; 2015 NitroPCR and the NitroPCR logo are registered trademarks of Open Frame LLC</p>
+</footer>
+<div id="back-top">
+  <a href="#header"><i class="fa fa-chevron-up"></i></a>
+</div>

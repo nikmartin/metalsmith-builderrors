@@ -1,2 +1,3 @@
-# metalsmith-builderrors
-the smalest example of metalsmith-collections not working
+# metalsmith collections
+
+this is the smallest example of metalsmith-collections not working
