@@ -1,5 +1,5 @@
 ---
 template: releases.hbs
-title: "NitroPCR Releases"
+title: "Releases"
 ---
 RELESASE

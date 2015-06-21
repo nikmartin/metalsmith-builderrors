@@ -1,8 +1,7 @@
 ---
 template: page.hbs
-title: "NitroPCR Features"
+title: "Features"
 ---
-
 * ONE
 * TWO
 * THREE

@@ -1,5 +1,5 @@
 ---
 template: blog.hbs
-title: "NitroPCR Blog"
+title: "Blog"
 ---
 BLOG

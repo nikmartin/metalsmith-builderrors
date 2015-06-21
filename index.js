@@ -1,5 +1,4 @@
 var fs = require('fs');
-var Q = require('q');
 
 var Metalsmith = require('metalsmith'),
   less = require('metalsmith-less'),
@@ -45,76 +44,49 @@ Handlebars.registerHelper('first', function(context, num, options) {
 });
 
 
-var partials = [
-  'gtm',
-  'meta',
-  'header',
-  'slidebar',
-  'footer',
-  'scripts'
-];
+function readPartial(name) {
+  return fs.readFileSync(__dirname + '/templates/partials/' +
+    name + '.hbs', 'utf-8');
+}
 
-Q.all(partials.map(function(name) {
-    return Q.nbind(fs.readFile, fs)(__dirname + '/templates/partials/' + name + '.hbs', 'utf-8');
+Handlebars.registerPartial('meta', readPartial('meta'));
+Handlebars.registerPartial('gtm', readPartial('gtm'));
+Handlebars.registerPartial('header', readPartial('header'));
+Handlebars.registerPartial('slidebar', readPartial('slidebar'));
+Handlebars.registerPartial('footer', readPartial('footer'));
+Handlebars.registerPartial('scripts', readPartial('scripts'));
+
+Metalsmith(__dirname)
+
+.use(less({
+  pattern: 'styles/style.less'
+}))
+
+
+.use(collections({
+    pages: {
+      pattern: '*.md',
+    },
+    blog: {
+      pattern: 'blog/*.md',
+      sortBy: 'date',
+      reverse: true
+    },
+    releases: {
+      pattern: 'releases/*.md',
+      sortBy: 'date',
+      reverse: true
+    }
   }))
-  .spread(function(
-    gtm,
-    meta,
-    header,
-    slidebar,
-    footer,
-    scripts
-  ) {
-    Handlebars.registerPartial('meta', meta);
-    Handlebars.registerPartial('gtm', gtm);
-    Handlebars.registerPartial('header', header);
-    Handlebars.registerPartial('slidebar', slidebar);
-    Handlebars.registerPartial('footer', footer);
-    Handlebars.registerPartial('scripts', scripts);
-
-    return true;
-  })
-  .then(function() {
-
-    Metalsmith(__dirname)
-
-    .use(less({
-      pattern: 'styles/style.less'
-    }))
-
-
-    .use(collections({
-      pages: {
-        pattern: 'content/pages/*.md'
-      },
-      blog: {
-        pattern: 'content/blog/*.md',
-        sortBy: 'date',
-        reverse: true
-      },
-      releases: {
-        pattern: 'content/releases/*.md',
-        sortBy: 'date',
-        reverse: true
-      }
-    }))
-
-
-    .use(markdown())
-      .use(templates('handlebars'))
-
-    .use(permalinks({
-      pattern: ':collection/:title'
-    }))
-
-
-    .destination('./build')
-      .build(function(err) {
-        if (err) {
-          console.log(err, err.stack);
-        }
-      });
-  })
-  .fail(function(err) {
-    console.error('failed to read partials', err, err.stack);
+  .use(markdown())
+  .use(templates('handlebars'))
+  .use(permalinks({
+    relative: false,
+    pattern: ':collection/:title'
+  }))
+  .destination('./build')
+  .build(function(err) {
+    if (err) {
+      console.log(err, err.stack);
+    }
   });
